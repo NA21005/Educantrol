@@ -1,0 +1,11 @@
+FROM mariadb:10.5
+
+# Variables de entorno para la configuración inicial de MariaDB
+ENV MYSQL_ROOT_PASSWORD=rootpassword
+ENV MYSQL_DATABASE=Educantrol
+ENV MYSQL_USER=luis
+ENV MYSQL_PASSWORD=master
+
+# Exponemos el puerto por defecto de MariaDB
+
+EXPOSE 3306
