@@ -162,6 +162,11 @@
                     </plugin>
                 </plugins>
             </build>
+            <properties>
+                <vaadin.productionMode>
+                    true
+                </vaadin.productionMode>
+            </properties>
         </profile>
 
         <profile>
