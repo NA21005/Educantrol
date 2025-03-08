@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  educantrol-app:
+    container_name: educantrol-app-container-compose
+    image: educantrol-app
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - educantrol-db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mariadb://educantrol-db-container-compose:3306/Educantrol
+  educantrol-db:
+    container_name: educantrol-db-container-compose
+    image: educantrol-db
+    ports:
+      - "3306:3306"
