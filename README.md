@@ -53,3 +53,14 @@ docs/: Documentación adicional, como el manual del usuario y el diagrama de arq
 + Ángel Josué Cortez Zaldaña – CZ23002
 + José Daniel Mendez Sanchez – MS19059
 + Kevin Armando Rivera Henríquez – RH16042
+
+## Comandos para dockerización por docker run
+
+```bash
+- mvn clean package -Pproduction 
+- docker build -t educantrol-db -f Dockerfile.db .
+- docker build -t educantrol-app . 
+- docker network create educantrol-network
+- docker run --name educantrol-db-container --network educantrol-network -e MYSQL_ROOT_PASSWORD=rootpassword -e MYSQL_DATABASE=Educantrol -e MYSQL_USER=luis -e MYSQL_PASSWORD=master -p 3306:3306 -d educantrol-db  
+- docker run --name educantrol-app-container --network educantrol-network -e SPRING_DATASOURCE_URL=jdbc:mariadb://educantrol-db-container:3306/Educantrol -e SPRING_DATASOURCE_USERNAME=luis -e SPRING_DATASOURCE_PASSWORD=master -p 8080:8080 -d educantrol-app
+```
