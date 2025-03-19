@@ -10,9 +10,12 @@ services:
     depends_on:
       - educantrol-db
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mariadb://educantrol-db-container-compose:3306/Educantrol
+      - DB_HOST=educantrol-db-container-compose
   educantrol-db:
     container_name: educantrol-db-container-compose
     image: educantrol-db
+    build:
+      context: .
+      dockerfile: Dockerfile.db
     ports:
       - "3306:3306"
