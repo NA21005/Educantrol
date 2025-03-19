@@ -12,7 +12,6 @@ COPY target/my-app-1.0-SNAPSHOT.jar app.jar
 EXPOSE 8080
 
 # Variables de entorno por defecto (se pueden sobrescribir en el comando docker run)
-ENV SPRING_DATASOURCE_URL=jdbc:mariadb://localhost:3306/Educantrol
 ENV SPRING_DATASOURCE_USERNAME=luis
 ENV SPRING_DATASOURCE_PASSWORD=master
 ENV PORT=8080
